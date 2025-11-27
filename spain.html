@@ -8,7 +8,8 @@
         margin: 0;
         padding: 0;
         font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #1b1b1b, #3a0ca3, #7209b7);
+        /* Spain-themed background: red top, yellow bottom with subtle gradient */
+        background: linear-gradient(135deg, #c60b1e, #ffcd00);
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -18,7 +19,7 @@
     }
 
     .card {
-        background: rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.08);
         padding: 40px;
         border-radius: 20px;
         box-shadow: 0 0 40px rgba(0,0,0,0.5);
@@ -56,14 +57,14 @@
 
     input:focus {
         background: rgba(255,255,255,0.28);
-        box-shadow: 0 0 15px #9d4edd;
+        box-shadow: 0 0 15px #ffcd00;
     }
 
     .button {
         width: 100%;
         margin-top: 20px;
         padding: 12px;
-        background: #ff006e;
+        background: #c60b1e;
         border: none;
         font-size: 18px;
         border-radius: 12px;
@@ -73,16 +74,17 @@
     }
 
     .button:hover {
-        background: #fb5607;
-        box-shadow: 0 0 20px #ff006e;
+        background: #ffcd00;
+        color: #c60b1e;
+        box-shadow: 0 0 20px #fff;
     }
 
     .result {
         margin-top: 25px;
         font-size: 26px;
         font-weight: 600;
-        color: #f72585;
-        text-shadow: 0 0 10px #f72585;
+        color: #c60b1e;
+        text-shadow: 0 0 10px #fff;
         min-height: 30px;
     }
 
@@ -123,10 +125,8 @@ function convertToSpanish() {
     }
 
     let base = name.toLowerCase();
-
     let endings = ["o", "ito", "elo", "ardo", "ez", "u", "ico", "al"];
     let randomEnding = endings[Math.floor(Math.random() * endings.length)];
-
     let spanishName = base.charAt(0).toUpperCase() + base.slice(1) + randomEnding;
 
     document.getElementById("resultName").innerHTML = spanishName;
@@ -134,5 +134,3 @@ function convertToSpanish() {
 </script>
 </body>
 </html>
-
-   
